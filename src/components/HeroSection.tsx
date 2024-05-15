@@ -1,116 +1,114 @@
+"use clients"
 import Image from 'next/image'
+import banner from '../assets/banner-img.png'
 import React, { useEffect, useState } from 'react'
-import {Button } from "./ui/button"
+import { Button } from "./ui/button"
 import { courses } from '../data/test.json';
-import {ChevronDownIcon} from '@heroicons/react/20/solid'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import bgimg from '../assets/banner-bg.png'
+import bannerbook from '../assets/banner-book.png'
+import bannervideo from '../assets/banner-video.png'
+import bannerstar from '../assets/banner-star.png'
+import bannstar from '../assets/banner-star2.png'
+import bannercap from '../assets/banner-cap.png'
+import bannermap from '../assets/banner-map.png'
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 
 function HeroSection() {
 
-  const [position, setPosition] = useState("bottom")
-
-    return (
+  return (
     <div>
-      <div className='bg-blue-100 flex flex-col  justify-center items-center'>
-
-        <div className='flex flex-col lg:flex-row-reverse justify-around m-5 bg-hero-pattern over bg-white rounded-3xl '>
-
-          <Image
-            src="/front.jpeg"
-            alt='Loading image'
-            width={570}
-            height={300}
-            className='rounded-3xl bg-clip-border '
-          />
-
-          <div className="justify-center rounded-l-3xl bg-white p-7 ">
-            <h1 className='bg-gradient-to-r from-blue-500 via-blue-600 to-red-600 inline-block text-transparent bg-clip-text text-4xl font-bold font-sans'>
-                Skilled Bano skilledUp se
-            </h1>
-            <br />
-            <p className=' pl-1 p-6 from-accent-foreground font-bold '>
-              SkilledUp offers a range of classes designed to help you learn 
-              <br />
-              new skills at your own pace. Get access to expert instruction and
-              community support.
+      <div className='bg-blue-900 min-w-full flex flex-col justify-center items-center pb-5 pt-10 md:pt-64 sm:pt-64 lg:pt-36 min-w-screen-lg'>
+        <div className='flex flex-col lg:flex-row items-center'>
+          <div className='lg:w-1/2 items-center p-5 lg:px-20'>
+            <h1 className='text-orange-500 text-4xl lg:text-5xl font-black mb-3 text-center lg:text-left'>A Better Learning Journey</h1>
+            <p className='text-white text-center lg:text-left font-medium'>
+              SkilledUp offers a range of classes designed to help you learn new skills at your own pace. Get access to expert instruction and community support.
             </p>
-
-            <h1 className='bg-gradient-to-r from-blue-500 via-blue-600  to-red-600 inline-block text-transparent bg-clip-text text-4xl font-bold'>Step for your Career</h1>
-
-          <div className='mt-3 flex flex-col gap-8 w-1/2'>
-        
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline">Open</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-                <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          
-            <select className='border-2 border-blue-600 p-2  text-blue-600 rounded-lg'>
-              <option>
-              Select Qualification
-              </option>
-              <option>Working Professional</option>
-              <option>Post-Graduate</option>
-              <option>Graduate</option>
-              <option>Undergraduate</option>
-              <option>Senior Secondary or Below</option>
-            </select>
+            <div className='mt-5 lg:mt-10 flex flex-col gap-4 w-full max-w-lg bg-white p-5 lg:p-10 border rounded-lg'>
+              <h1 className='text-black text-bold text-center lg:text-left text-xl lg:text-3xl mb-3'>Get Personalised Courses</h1>
+              <select className='border-2 border-blue-500 p-2 rounded-lg text-blue-600'>
+                <option className='text-blue-600'>Select your Course</option>
+                <option>Data Scientist</option>
+                <option>Machine Learning </option>
+                <option>Full Stack Developer</option>
+                <option>Web Developer</option>
+                <option>App Developer</option>
+              </select>
+              <select className='border-2 border-blue-600 p-2 rounded-lg text-blue-600'>
+                <option>Select Qualification</option>
+                <option>Working Professional</option>
+                <option>Post-Graduate</option>
+                <option>Graduate</option>
+                <option>Undergraduate</option>
+                <option>Senior Secondary or Below</option>
+              </select>
+              <Button className='bg-gradient-to-r from-blue-500 via-blue-600 to-red-600 w-full'>
+                Get Started
+              </Button>
+            </div>
           </div>
 
-          <div className='mt-6 gap-6 flex justify-start items-center'>
-            <Button className='bg-gradient-to-r from-blue-500 via-blue-600  to-red-600 w-1/2 lg:w-1/3'>
-              Get Started
-            </Button>
-            <p>or</p>
-            <Button className='bg-gradient-to-r from-blue-500 via-blue-600  to-red-600 w-1/2 lg:w-1/3'>
-              Explore Courses
-            </Button>
-          </div>
-
-        
-          </div>        
-        </div>
-
-
-        <div className='items-center justify-center flex bg-gradient-to-r from-blue-500 from-10% via-blue-600 via-30% to-red-500 to-90% p-1 w-5/6 rounded-3xl mb-3'>
-          <div className='rounded-3xl bg-white shadow-lg  flex  w-full justify-center items-center pl-5 p-2 lg:gap-10 lg:py-6 lg:text-2xl font-bold'>
-                <h1 className='bg-gradient-to-r from-blue-500 via-blue-600  to-red-600 inline-block text-transparent bg-clip-text '>
-                  50+ Courses
-                </h1> |
-                <h1 className='bg-gradient-to-r from-blue-500 via-blue-600  to-red-600 inline-block text-transparent bg-clip-text '>
-                  8000+ Learners
-                </h1>  |
-                <h1 className='bg-gradient-to-r from-blue-500 via-blue-600  to-red-600 inline-block text-transparent bg-clip-text '>
-                  1000+ Certified
-                </h1>
+          <div className="lg:w-1/2 bg-[url('/assets/banner-bg.png')]">
+            <Image className='border-xl border-orange-500 border-solid bg-orange-500 rounded-full p-5 lg:p-8 mx-6 lg:mx-12'
+              src={banner}
+              alt='Loading image'
+              width={500}
+              height={500}
+            />
+            <Image className=' absolute top-45 right-50 bottom-0 hidden md:block'
+              src={bannerstar}
+              alt='banner-star'
+            />
+            <Image className=' absolute top-36 right-56 bottom-0 hidden md:block'
+              src={bannermap}
+              alt='banner-star'
+            />
+            <Image className=' absolute top-60 right-62 bottom-0 hidden md:block'
+              src={bannercap}
+              alt='banner-cap'
+            />
+            <Image className=' absolute top-40 right-1/3 bottom-0 hidden md:block'
+              src={bannstar}
+              alt='banner-star'
+            />
+            
+            <Image className='absolute top-260 right-40 bottom-0 hidden md:block'
+              src={bannerbook}
+              alt='banner-book'
+            />
+            <Image className='absolute top-0 right-0 bottom-0 '
+              src={bgimg}
+              alt='banner-bg'
+            />
           </div>
         </div>
-
+        <div className='items-center justify-center flex bg-gradient-to-r from-blue-500 from-10% via-blue-600 via-30% to-red-500 to-90% p-1 w-full lg:w-3/6 rounded-3xl mb-3'>
+          <div className='rounded-3xl p-5 lg:p-10 bg-white shadow-lg h-auto lg:h-40 flex gap-5 lg:gap-11 w-full justify-center items-center'>
+            <h1 className='bg-gradient-to-r from-blue-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold '>
+              50+
+              <p className='text-black text-xl lg:text-2xl'>Courses</p>
+            </h1>
+            <div className='h-8 lg:h-16 w-0.5 bg-gray-300'></div>
+            <h1 className='p-5 lg:p-10 bg-gradient-to-r from-blue-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold '>
+              8000+
+              <p className='text-black text-xl lg:text-2xl'>Learners</p>
+            </h1>
+            <div className='h-8 lg:h-16 w-0.5 bg-gray-300'></div>
+            <h1 className='bg-gradient-to-r from-blue-600 to-red-600 inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold '>
+              1000+
+              <p className='text-black text-xl lg:text-2xl'>Certified</p>
+            </h1>
+          </div>
+        </div>
       </div>
 
-       
 
     </div>
+
   )
 }
 

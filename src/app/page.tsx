@@ -17,7 +17,13 @@ import HeroSection from '@/components/HeroSection';
 import { useWindowSize } from '@react-hook/window-size'
 import CircularProgress from '@mui/material/CircularProgress';
 import { Sparkle } from 'lucide-react';
-import Partners from '@/components/Partener';
+import Nav from '@/components/Nav/Navbar';
+import DetailSection from '@/components/DetailSection';
+import Achiever from '@/components/Achiever';
+import Support from '@/components/Support';
+import Mentor from '@/components/Mentor';
+import { Testimonial } from '@/components/Testimonial';
+
 
 
 
@@ -125,8 +131,10 @@ function Home() {
 
   return (
    <main className=''>
-
+     
     <HeroSection/>
+    <DetailSection/>
+
 
     <Spacer className='h-[50px]'/>
 
@@ -140,8 +148,8 @@ function Home() {
             key={time}
             className={`py-2 px-4 rounded-lg w-full  ${
               selectedTime === time
-                ? 'bg-blue-600 text-white hover:bg-blue-700'
-                : 'text-gray-600 hover:bg-blue-400 bg-gray-300'
+                ? 'bg-blue-900 text-white hover:bg-blue-900'
+                : 'text-gray-600 hover:bg-blue-900 hover:text-white bg-gray-300'
             }`}
             onClick={() => {
               console.log("time: ", time)
@@ -166,8 +174,8 @@ function Home() {
             key={category}
             className={`py-2 px-4 rounded-lg w-full  ${
               selectedCategory === category
-                ? 'bg-blue-600 text-white hover:bg-blue-700'
-                : 'text-gray-600 hover:bg-blue-400 bg-gray-300'
+                ? 'bg-blue-900 text-white hover:bg-blue-900'
+                : 'text-gray-600 hover:bg-blue-900 hover:text-white bg-gray-300'
             }`}
             onClick={() => {
               console.log("category: ", category)
@@ -200,7 +208,7 @@ function Home() {
                     alt='Loading Image...'
                     width={300}
                     height={160}
-                    className=' w-full rounded-2xl '
+                    className=' w-full rounded-tl-2xl rounded-tr-2xl '
                   >
                   </Image>
     
@@ -243,7 +251,7 @@ function Home() {
                   </div>  
         
                 <div className='flex flex-row justify-between items-center'>
-                    <Button className='bg-transparent text-blue hover:text-white hover:bg-blue-500  px-8 py-1 border-blue-600 border-solid border-2 rounded-md font-sm'
+                    <Button className=' text-orange-600 hover:bg-white px-12 py-2 bg-white border-orange-600 border-solid  border-2 rounded-md font-lg font-bold'
                     onClick={() => {
                       router.push(`/courses?id=${course.id}`)
                       toast({
@@ -255,7 +263,7 @@ function Home() {
                     >
                       Explore
                   </Button>
-                  <Button className='bg-gradient-to-r from-indigo-500  to-blue-500 text-white px-6'>
+                  <Button className='bg-gradient-to-r from-orange-300  to-orange-600 text-white px-12 py-2 font-bold'>
                       Enroll Now
                   </Button>
                 </div>
@@ -281,7 +289,12 @@ function Home() {
     </div>
     </div>
 
-    <Partners/>
+    {/* <Partners/> */}
+    <Support/>
+    <Mentor/>
+    
+    <Achiever/>
+    <Testimonial/>
 
     <Footer/>
 
