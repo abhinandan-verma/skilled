@@ -65,9 +65,11 @@ export async function POST(request: Request){
                 existingAdminByEmail.passCode = passCode;
                 existingAdminByEmail.isVerified = false;
                 existingAdminByEmail.phoneNumber = phoneNumber;
+                existingAdminByEmail.adminName = adminName;
 
                 await existingAdminByEmail.save();
                 console.log("Existing Admin saved successfully, verify code sent ")
+                console.log("Existing Admin: ", existingAdminByEmail)
             }
         }else{
             const hashedPassword = await bcrypt.hash(password, 10)
@@ -81,6 +83,7 @@ export async function POST(request: Request){
             })
             await newAdmin.save()
             console.log("New Admin saved successfully, verify code sent")
+            console.log("New Admin: ", newAdmin)
         }
 
         const sendEmail  = await sendVerificationEmail(email, adminName, verifyCode)

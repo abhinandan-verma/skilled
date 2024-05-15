@@ -1,12 +1,12 @@
 import mongoose, {Document, Schema } from "mongoose";
 
 export interface CourseAbout {
-    title: string;
+    aboutTitle: string;
     aboutDetails: string[];
 }
 
 export const CourseAboutSchema: Schema<CourseAbout> = new Schema({
-    title: {
+    aboutTitle: {
         type: String,
     },
     aboutDetails: [
@@ -16,5 +16,4 @@ export const CourseAboutSchema: Schema<CourseAbout> = new Schema({
     ]
 })
 
-const CourseAboutModel = mongoose.models && mongoose.models.CourseAbout ? mongoose.models.CourseAbout as mongoose.Model<CourseAbout> : mongoose.model<CourseAbout>("CourseAbout", CourseAboutSchema);
-export default CourseAboutModel;
+export default CourseAbout
