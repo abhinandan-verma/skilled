@@ -7,6 +7,7 @@ import Nav from "@/components/Nav/Navbar";
 import Footer from "@/components/Footer";
 
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,12 +23,14 @@ export default function RootLayout({
 
  
   return (
+    <>
     <html lang="en">
      <AuthProvider>
           <body className={inter.className}>
             {/* <Providers> */}
 
               {/* <Nav/> */}
+              <Nav/>
             
               {children}
             
@@ -36,6 +39,9 @@ export default function RootLayout({
             <Toaster />
           </body>
         </AuthProvider>
+       
     </html>
+    
+     </>
   );
 }

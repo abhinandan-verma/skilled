@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, dropdown, extendVariants} from "@nextui-org/react";
@@ -6,7 +6,12 @@ import Image from "next/image";
 import { ChevronDown, Heading1 } from "lucide-react";
 
 
-
+// export const MyDropDown = extendVariants(Dropdown, {
+//   variants:{
+//     color: {
+//     },
+//   }
+// })
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -24,14 +29,30 @@ export default function Nav() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent bg-opacity-0">
+    <div className='fixed min-w-full z-50 min-w-screen-lg'>
+    <nav className='bg-blue-900 mx-auto min-w-full z-50 min-w-screen-lg'>
+    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex items-center justify-between h-10'>
+            <div className='flex item-center'>
+                <p className='text-white text-bold mx-10'>Welcome to SkilledUp!</p>
+            </div>
+            <div className='flex item-end'>
+                <p className='text-white text-bold '>
+                    <Link href='/' className='mx-5 text-white'>Need Help</Link>
+                    <Link href='/' className='mx-5 text-white'>Contact Us</Link>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-white">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <h1 className="text-4xl font-bold text-blue-500">skilledUp</h1>
+          <h1 className="text-4xl font-bold text-black">skilled<span className="text-blue-900">Up </span></h1>
         </NavbarBrand>
       </NavbarContent>
 
@@ -42,7 +63,7 @@ export default function Nav() {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent hover:bg-blue-200 rounded-lg p-2"
+                className=" bg-transparent data-[hover=true]:bg-transparent hover:bg-blue-200 rounded-lg p-2"
                // endContent={Heading1}
                 radius="sm"
                 variant="light"
@@ -54,44 +75,52 @@ export default function Nav() {
           </NavbarItem>
           <DropdownMenu
             aria-label="ACME features"
-            className="w-[340px] bg-blue-500 text-white rounded-lg shadow-xl"
+            className="p-2 w-[340px] bg-white text-black rounded-lg shadow-xl"
             itemClasses={{
               base: "gap-4",
             }}
           >
             <DropdownItem
               key="autoscaling"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              // description="ACME scales apps to meet user demand, automagically, based on load."
              // startContent={icons.scale}
-             href="/courses/ds"
-             className="hover:bg-blue-100 hover:text-blue-600 p-2 rounded-lg"
+             href="\courses\ds"
+             className="  hover:bg-blue-100 hover:text-black p-2 rounded-lg"
             >
              Data Science
             </DropdownItem>
             <DropdownItem
               key="web-dev"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              // description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              href="/courses/web"
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
               //startContent={icons.activity}
             >
               Web Development
             </DropdownItem>
             <DropdownItem
               key="ml"
-              description="Machine Learning"
+              // description="Machine Learning"
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+              href="/courses/ml"
               //startContent={icons.flash}
             >
               Machine Learinig
             </DropdownItem>
             <DropdownItem
               key="99_uptime"
-              description="Applications stay on the grid with high availability and high uptime guarantees."
+              // description="Applications stay on the grid with high availability and high uptime guarantees."
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+              href="/courses/mobile"
               //startContent={icons.server}
             >
               Mobile App Development
             </DropdownItem>
             <DropdownItem
               key="supreme_support"
-              description="Overcome any challenge with a supporting team ready to respond."
+              // description="Overcome any challenge with a supporting team ready to respond."
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+                href="/courses/blockchain"
               //startContent={icons.user}
             >
               Blockchain
@@ -100,31 +129,108 @@ export default function Nav() {
         </Dropdown>
 
 
-        <NavbarItem className="hover:bg-blue-200 hover:text-blue-600 p-2 rounded-lg">
+        <NavbarItem className="text-black hover:bg-blue-200 hover:text-black font-bold rounded-lg px-3 py-2">
           <Link color="success" href="/">
             Home
           </Link>
         </NavbarItem>
-        <NavbarItem isActive className="hover:bg-blue-200 hover:text-blue-600 p-2 rounded-lg">
+        <NavbarItem isActive className="text-black hover:bg-blue-200 hover:text-black font-bold rounded-lg px-3 py-2">
           <Link href="/courses" aria-current="page">
-            Courses
+           Internship
           </Link>
         </NavbarItem>
-        <NavbarItem className="hover:bg-blue-200 hover:text-blue-600 p-2 rounded-lg">
-          <Link color="foreground" href="/abhyas" >
-            Abhyas
-          </Link>
-        </NavbarItem >
-        <NavbarItem className="hover:bg-blue-200 hover:text-blue-600 p-2 rounded-lg">
+        <NavbarItem className="text-black hover:bg-blue-200 hover:text-black font-bold rounded-lg px-3 py-2">
           <Link color="foreground" href="/jobdekho">
-            JobDekho
+            Job Portal
           </Link>
         </NavbarItem>
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className=" bg-transparent data-[hover=true]:bg-transparent rounded-lg text-black hover:bg-blue-200 hover:text-black font-bold px-3 py-2"
+               // endContent={Heading1}
+                radius="sm"
+                variant="light"
+              >
+                More
+                <ChevronDown />
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu
+            aria-label="ACME features"
+            className="p-2 w-[200px] bg-white text-black rounded-lg shadow-xl"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            <DropdownItem
+              key="autoscaling"
+              // description="ACME scales apps to meet user demand, automagically, based on load."
+             // startContent={icons.scale}
+             href="/about"
+             className="  hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+            >
+            About Us
+            </DropdownItem>
+            <DropdownItem
+              key="web-dev"
+              // description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              href="/contact"
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+              //startContent={icons.activity}
+            >
+             Contact Us
+            </DropdownItem>
+
+            <DropdownItem
+              key="99_uptime"
+              // description="Applications stay on the grid with high availability and high uptime guarantees."
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+              href="/faq"
+              //startContent={icons.server}
+            >
+              FAQ's
+            </DropdownItem>
+            <DropdownItem
+              key="ml"
+              // description="Machine Learning"
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+              href="/t&c"
+              //startContent={icons.flash}
+            >
+              Terms & Conditions
+            </DropdownItem>
+           
+           
+            <DropdownItem
+              key="supreme_support"
+              // description="Overcome any challenge with a supporting team ready to respond."
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+                href="/privacy"
+              //startContent={icons.user}
+            >
+              Privacy & Policy
+            </DropdownItem>
+            <DropdownItem
+              key="#"
+              // description="Applications stay on the grid with high availability and high uptime guarantees."
+              className="hover:bg-blue-100 hover:text-black p-2 rounded-lg"
+              href="/certificate"
+              //startContent={icons.server}
+            >
+              Certificate
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+       
       </NavbarContent>
       <NavbarContent justify="end">
         
         <NavbarItem>
-          <Button as={Link} color="primary" href="/auth" variant="solid" className="rounded-lg bg-blue-700">
+          <Button as={Link} color="primary" href="/auth" variant="solid" className="bg-blue-900 border text-white font-bold rounded-lg py-2 px-3">
             Sign Up/Login
           </Button>
         </NavbarItem>
@@ -146,5 +252,6 @@ export default function Nav() {
         ))}
       </NavbarMenu>
     </Navbar>
+    </div>
   );
 }
