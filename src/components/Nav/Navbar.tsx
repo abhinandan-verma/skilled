@@ -6,12 +6,6 @@ import Image from "next/image";
 import { ChevronDown, Heading1 } from "lucide-react";
 
 
-// export const MyDropDown = extendVariants(Dropdown, {
-//   variants:{
-//     color: {
-//     },
-//   }
-// })
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -30,21 +24,6 @@ export default function Nav() {
 
   return (
     <div className='fixed min-w-full z-50 min-w-screen-lg'>
-    <nav className='bg-blue-900 mx-auto min-w-full z-50 min-w-screen-lg'>
-    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between h-10'>
-            <div className='flex item-center'>
-                <p className='text-white text-bold mx-10'>Welcome to SkilledUp!</p>
-            </div>
-            <div className='flex item-end'>
-                <p className='text-white text-bold '>
-                    <Link href='/' className='mx-5 text-white'>Need Help</Link>
-                    <Link href='/' className='mx-5 text-white'>Contact Us</Link>
-                </p>
-            </div>
-        </div>
-    </div>
-</nav>
     <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-white">
       <NavbarContent>
         <NavbarMenuToggle
@@ -192,7 +171,7 @@ export default function Nav() {
               href="/faq"
               //startContent={icons.server}
             >
-              FAQ's
+              FAQs
             </DropdownItem>
             <DropdownItem
               key="ml"
