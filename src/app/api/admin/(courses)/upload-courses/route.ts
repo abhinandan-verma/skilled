@@ -32,6 +32,25 @@ export async function POST(request: Request): Promise<Response> {
     console.log("DB Connected")
 
     try {
+
+
+        const existingCourse = await CourseModel.findOne({
+            name: name,
+        });
+
+        if (existingCourse) {
+            console.log("Course Already uploaded: ", existingCourse);
+
+            return Response.json(
+                {
+                    success: false,
+                    message: "Course already uploaded",
+                },
+                {
+                    status: 400,
+                }
+            );
+        }
         
         const newCourse = new CourseModel({
             id: id,
