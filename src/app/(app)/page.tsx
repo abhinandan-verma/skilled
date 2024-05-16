@@ -250,7 +250,7 @@ function Home() {
                 <div className='flex flex-row justify-between items-center'>
                     <Button className=' text-orange-600 hover:bg-white px-12 py-2 bg-white border-orange-600 border-solid  border-2 rounded-md font-lg font-bold'
                     onClick={() => {
-                      router.push(`/courses?id=${course._id}`)
+                      router.push(`/courses?id=${course.name}`)
                       toast({
                         title: "Course " + course.name,
                         description: "Navigating to course page",

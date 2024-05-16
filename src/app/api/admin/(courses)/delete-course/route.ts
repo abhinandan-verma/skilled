@@ -17,30 +17,17 @@ export async function POST(request: Request): Promise<Response> {
 
     try {
 
-        const existingCourseByID = await CourseModel.findOne({
-            id: id,
-        });
-
-        if (!existingCourseByID) {
-            console.log("Course Not Found: ", existingCourseByID);
-
-            return Response.json(
-                {
-                    success: false,
-                    message: "Course not found",
-                },
-                {
-                    status: 400,
-                }
-            );
-        }
+        const existingCourseByID = await CourseModel.findById(id);
+        console.log("Existing Course By ID: ", existingCourseByID)
 
         const existingCourseByName = await CourseModel.findOne({
             name: name,
         });
+        console.log("Existing Course By Name: ", existingCourseByName)
 
-        if (!existingCourseByName) {
-            console.log("Course Not Found: ", existingCourseByName);
+
+        if (!existingCourseByID && !existingCourseByName) {
+            console.log("Course Not Found: ", existingCourseByID, existingCourseByName);
 
             return Response.json(
                 {
@@ -54,7 +41,7 @@ export async function POST(request: Request): Promise<Response> {
         }
 
         await CourseModel.deleteOne({ 
-            id: id,
+            _id: id,
             name: name
         });
 
