@@ -101,7 +101,7 @@ function Courses() {
         {
           filterCourses.map((course, index) => (
 
-            <Card key={course.id} className='rounded-2xl bg-white max-w-sm ' 
+            <Card key={course.name} className='rounded-2xl bg-white max-w-sm ' 
             
             >
               <CardHeader className='w-full p-0 rounded-2xl' >
@@ -126,7 +126,7 @@ function Courses() {
       
                 <div className='flex flex-row justify-between items-center mt-2 ml-2'>
                   <p className='text-xs'>
-                    Instructor: {course.instructor}
+                    Instructor: {course.mentors}
                   </p>
                   
                 </div>

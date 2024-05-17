@@ -1,7 +1,7 @@
 import mongoose, {Schema, Document } from "mongoose";
 import { Video, VideoSchema } from "./Video";
 import VideoModel from "./Video";
-import { CourseOffer, CourseOfferSchema } from "./CourseParts";
+import { CourseOffer, CourseOfferSchema, Syllabus } from "./CourseParts";
 import { CourseAboutSchema, CourseAbout } from "./CourseAbout";
 
 export interface Course {
@@ -16,11 +16,11 @@ export interface Course {
     imageUrl: string;
     videoUrl?: string;
     syllabusLink: string;
-    videos?: Video[];
+    videos?: string[];
     categories: string[];
     courseOfferings?: CourseOffer[];
     tag?: string;
-    syllabus?: string[];
+    syllabus?: Syllabus[];
 }
 
 
@@ -33,7 +33,16 @@ const CourseSchema: Schema<Course> = new Schema({
         type: String,
         required: true
     },
-    about: CourseAboutSchema,
+    about: {
+        aboutTitle: {
+            type: String,
+        },
+        aboutDetails: [
+            {
+                type: String,
+            }
+        ]
+    },
     price: {
         type: Number,
         required: true
@@ -67,9 +76,10 @@ const CourseSchema: Schema<Course> = new Schema({
         type: String,
         required: true
     },
-    videos: [
-        VideoSchema
-    ],
+    videos: {
+        type: [String],
+        required: true
+    },
     categories: {
         type: [String],
         required: true
@@ -77,11 +87,32 @@ const CourseSchema: Schema<Course> = new Schema({
     tag: {
         type: String
     },
-    syllabus: {
-        type: [String]
-    },
+    syllabus: [
+        {
+            syllabusTitle: {
+                type: String,
+            },
+            syllabusDetails: [
+                {
+                    type: String,
+                }
+            ],
+            syllabusImage: {
+                type: String
+            }
+        }
+    ],
     courseOfferings: [
-        CourseOfferSchema
+        {
+            offerTitle: {
+                type: String,
+            },
+            offerDetails: [
+                {
+                    type: String,
+                }
+            ]
+        }
     ]
 })
 

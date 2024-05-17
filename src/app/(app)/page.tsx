@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -25,8 +24,6 @@ import Mentor from '@/components/Mentor';
 import { Testimonial } from '@/components/Testimonial';
 
 
-
-
 function Home() {
 
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
@@ -37,7 +34,7 @@ function Home() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
   const [windowWidth] = useWindowSize()
-
+  const [route, setRoute] = useState<string>('/')
 
 
   const fetchCourses = useCallback(async () => {
@@ -139,10 +136,10 @@ function Home() {
     <Spacer className='h-[50px]'/>
 
     {/* Upper Tabbar with timing filter */}
-    <div className='w-full p-1 sticky top-[30px] ' style={{ position: windowWidth > 1024 ? 'sticky' : 'static', top: 0, zIndex: 10 }} id='timebar'>
-      <div className="flex gap-1  justify-between">
+    <div className='w-full p-1 sticky top-32' style={{ position: windowWidth > 1024 ? 'sticky' : 'static', top: 0, zIndex: 10 }} id='timebar'>
+      <div className="flex gap-1  justify-between ">
         {
-          ['All','Live', 'Upcming', 'Bootcamp'].map(time => (
+          ['All','Live', 'Upcoming', 'Bootcamp'].map(time => (
             <Button 
             variant="default"
             key={time}
@@ -201,7 +198,7 @@ function Home() {
             </div>
           ) : filteredByTimeCourses.length > 0 ? (
             filteredByTimeCourses.map(course => (
-              <Card key={course.id} className='rounded-2xl bg-white lg:max-w-sm w-fit mt-3' >
+              <Card key={course?.name} className='rounded-2xl bg-white lg:max-w-sm w-fit mt-3' >
                 <CardHeader className='w-full p-0 rounded-2xl' >
                   <Image
                     src={course.imageUrl}
@@ -233,10 +230,10 @@ function Home() {
                 <div className='flex justify-between  mb-2 rounded-2xl p-3 w-full'>
         
                 <h2 className='font-bold font-sans text-2xl text-blue-700'>
-                &#8377;{course.price}
+                &#8377;{course.price || 0}
                   </h2>
                 <p className='text-center'>
-                    {course.duration}
+                    {course.duration || 0}
                 </p>
                 </div>
         
@@ -253,7 +250,7 @@ function Home() {
                 <div className='flex flex-row justify-between items-center'>
                     <Button className=' text-orange-600 hover:bg-white px-12 py-2 bg-white border-orange-600 border-solid  border-2 rounded-md font-lg font-bold'
                     onClick={() => {
-                      router.push(`/courses?id=${course.id}`)
+                      router.push(`/courses?id=${course.name}`)
                       toast({
                         title: "Course " + course.name,
                         description: "Navigating to course page",
@@ -289,14 +286,11 @@ function Home() {
     </div>
     </div>
 
-    {/* <Partners/> */}
     <Support/>
     <Mentor/>
     
     <Achiever/>
     <Testimonial/>
-
-    <Footer/>
 
    </main>
   )

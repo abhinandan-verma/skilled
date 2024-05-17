@@ -14,11 +14,11 @@ function page() {
         By accessing this website, you agree to be bound by these website Terms and Conditions of Use, applicable laws and regulations and their compliance.
       </p>
       <p className='ml-16 mr-10 mb-2 text-lg'>
-        The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Companys terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our training and assistance to the Student/Client in the most appropriate manner. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to the same.
+        The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: Client, You and  refers to you, the person log on this website and compliant to the Companys terms and conditions. refers to our Company. , refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our training and assistance to the Student/Client in the most appropriate manner. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to the same.
       </p>
       <h1 className='mt-20 ml-16 mb-4 text-3xl'>Cookies</h1>
       <p className='ml-16 mr-10 mb-2 text-lg'>
-        We need to use cookies sometime. By accessing skilledUp, you agreed to use cookies in agreement with the skilledup intelligence private limited's Privacy Policy.
+        We need to use cookies sometime. By accessing skilledUp, you agreed to use cookies in agreement with the skilledup intelligence private limiteds Privacy Policy.
       </p>
       <p className='ml-16 mr-10 mb-2 text-lg'>
         Most interactive websites use cookies to let us retrieve the users details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
@@ -37,7 +37,7 @@ function page() {
       </p>
       <h1 className='mt-20 ml-16 mb-4 text-3xl'>Job Oriented & Job Assurance Courses</h1>
       <p className='ml-16 mr-10 mb-2 text-lg'>
-        We are offering all the programs &courses are completely Job Oriented, Here Job Oriented means The courses, we've prepared make you skilled for the job market. Here Job Assurance means, We're imparting quality education and after getting expertise in all these skills, anyone can get very attractive job offer in job market, so we assure our students that they will get a job if prepared well.
+        We are offering all the programs &courses are completely Job Oriented, Here Job Oriented means The courses, weve prepared make you skilled for the job market. Here Job Assurance means, We are imparting quality education and after getting expertise in all these skills, anyone can get very attractive job offer in job market, so we assure our students that they will get a job if prepared well.
       </p>
       <h1 className='mt-20 ml-16 mb-4 text-3xl'>Terms & Conditions for Job guarantee from skilledUp (India Only)</h1>      
         <li className='ml-16 mr-10 mb-2 text-lg'>
@@ -47,7 +47,7 @@ function page() {
           Candidates must be eligible to work in India as per the guidelines of the Government of India.
         </li>
         <li className='ml-16 mr-10 mb-2 text-lg'>
-          Remote Internship, provided by skilledUp, is mandatory for every candidate who is part of the Job Guarantee program. Without the completion of the projects/Internship, the Job Guarantee won't be applicable to the candidate.
+          Remote Internship, provided by skilledUp, is mandatory for every candidate who is part of the Job Guarantee program. Without the completion of the projects/Internship, the Job Guarantee wont be applicable to the candidate.
         </li>
         <li className='ml-16 mr-10 mb-2 text-lg'>
           Candidates must complete at least 40% of the given assignments/projects/etc. Issued in the course their grades in assignments/projects/etc. Should be =40% to avail of the Job Guarantee.
@@ -68,10 +68,10 @@ function page() {
         Candidates are supposed to complete their internship projects in order to apply for the opportunities provided to them as part of the Job Guarantee Program. Failure to complete the internship/projects will result in the candidate will be eligible for Job Assistance only.
         </li>
         <li className='ml-16 mr-10 mb-2 text-lg'>
-        There should not be more than two years of career gap in the candidate's profile.
+        There should not be more than two years of career gap in the candidates profile.
         </li>
         <li className='ml-16 mr-10 mb-2 text-lg'>
-        skilledUp will refer the candidates to companies for interviews only with the candidate's prior consent, in any case, if the candidate is unwilling or fails to attend the interview. They will not be applicable to claim the refund, and skilledUp will have all the rights to deny any other interview opportunity.
+        skilledUp will refer the candidates to companies for interviews only with the candidates prior consent, in any case, if the candidate is unwilling or fails to attend the interview. They will not be applicable to claim the refund, and skilledUp will have all the rights to deny any other interview opportunity.
         </li>
         <li className='ml-16 mr-10 mb-2 text-lg'>
         skilledUp will refer you to various product-based, service-based, or startup companies.
